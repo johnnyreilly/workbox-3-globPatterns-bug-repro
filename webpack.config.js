@@ -15,12 +15,16 @@ module.exports = {
         }),
         new WorkboxPlugin({
             // importWorkboxFromCDN: false,
+
             // we want our service worker to cache the dist directory
-            // globDirectory: 'dist',
+            globDirectory: 'dist',
+
             // these are the sorts of files we want to cache
             globPatterns: ['**/*.{html,js,css,png,svg,jpg,gif,json}'],
+
             // this is where we want our ServiceWorker to be created
             // swDest: path.resolve('dist', 'sw.js'),
+
             // these options encourage the ServiceWorkers to get in there fast 
             // and not allow any straggling "old" SWs to hang around
             clientsClaim: true,
